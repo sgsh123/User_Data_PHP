@@ -1,5 +1,5 @@
 $(document).ready(function()
-{
+{   $("#success_msg").hide();
     $("#result").on("click", function()
     {
         window.location.href='display.php';
@@ -30,9 +30,13 @@ $(document).ready(function()
                     url: 'form.php', 
                     data: { "fname": fname, "lname": lname, "dob": dob, "phone":phone},
                     success: function(data) 
-                    {
-                        alert("Your data has been saved successfully.");
-                        window.location.reload(true);
+                    {   
+                        $("#success_msg").show();
+                        setTimeout(function() 
+                        { 
+                            $("#success_msg").hide(); 
+                            //window.location.reload(true);
+                        }, 3000);
                     }
                });
             }
