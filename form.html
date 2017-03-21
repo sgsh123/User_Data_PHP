@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-<body>
-<form name="user_details" action="form.php" onsubmit ="return validate_form()" method = "post">
-First Name: <input type = "text" name = "fname"/>
-<br><br>
-Last Name: <input type = "text" name = "lname" id = "lname"/>
-<br><br>
-Date of Birth: <input type = "date" name="dob" id = "dob"/>
-<br><br>
-Contact Number: <input type="text" name="phone" id = "phone"/>
-<br><br>
-<input value="Submit" type = "submit"/>
-<br><br> 
-</form>
-<button type="button" id="result">Show Results</button>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="form.js"></script>
+<body>
+	<form name="user_details" method = "post" id="user_form">
+		First Name: <input type = "text" name = "fname"/>
+		<br><br>
+		Last Name: <input type = "text" name = "lname" id = "lname"/>
+		<br><br>
+		Date of Birth: <input type = "date" name="dob" id = "dob"/>
+		<br><br>
+		Contact Number: <input type="text" name="phone" id = "phone"/>
+		<br><br>
+		<input value="Submit" type = "submit"/>
+		<br><br> 
+	</form>
+	<button type="button" id="result">Show Results</button>
 </html>
