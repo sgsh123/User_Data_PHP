@@ -13,15 +13,53 @@ $(document).ready(function()
         var dob = document.forms["user_details"]["dob"].value;
         var phone = document.forms["user_details"]["phone"].value;
 
-        if(fname == "" || lname == "" ||  dob == "" ||  phone == "")
+        if(fname == "")
         {
-            alert("Please fill in all fields");
+            $("#msg").text("Please fill in your First Name");
+                         $("#success_msg").show();
+                            setTimeout(function() 
+                        { 
+                            $("#success_msg").hide(); 
+                        }, 3000);
+        }
+        else if(lname == "")
+        {
+            $("#msg").text("Please fill in your Last Name");
+                         $("#success_msg").show();
+                            setTimeout(function() 
+                        { 
+                            $("#success_msg").hide(); 
+                        }, 3000);
+        }
+        else if(dob == "")
+        {
+            $("#msg").text("Please fill in your Date of Birth");
+                         $("#success_msg").show();
+                            setTimeout(function() 
+                        { 
+                            $("#success_msg").hide(); 
+                        }, 3000);
+        }
+        else if(phone == "")
+        {
+            $("#msg").text("Please fill in your Phone Number");
+                         $("#success_msg").show();
+                            setTimeout(function() 
+                        { 
+                            $("#success_msg").hide(); 
+                        }, 3000);
         }
         else
         {
             if(phone.length != 10)
             {
-                alert("Please enter a valid 10 digit phone number");
+                $("#msg").text("Please enter a valid 10 digit phone number");
+                         $("#success_msg").show();
+                            setTimeout(function() 
+                        { 
+                            $("#success_msg").hide(); 
+                            //window.location.reload(true);
+                        }, 3000);
             }
             else
             {
@@ -29,10 +67,11 @@ $(document).ready(function()
                     type: 'POST',  
                     url: 'form.php', 
                     data: { "fname": fname, "lname": lname, "dob": dob, "phone":phone},
-                    success: function(data) 
+                    success: function(response) 
                     {   
-                        $("#success_msg").show();
-                        setTimeout(function() 
+                         $("#msg").text(response);
+                         $("#success_msg").show();
+                            setTimeout(function() 
                         { 
                             $("#success_msg").hide(); 
                             //window.location.reload(true);
