@@ -11,7 +11,15 @@ $phone = $_POST['phone'];
 
 $sql = "INSERT INTO `user_info` (`first name`, `last name`, `date of birth`, `contact no`) VALUES ('$fname', '$lname' , '$dob' , '$phone')";
 
-mysqli_query($con, $sql);
+$query = mysqli_query($con, $sql);
 
-header("Location: http://localhost/display.php");
+if($query)
+{
+     echo "Your details have been added to the database successfully";
+}
+else
+{
+    echo "Your details could not be saved due to a server error";
+}
+
 ?>
