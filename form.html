@@ -5,19 +5,22 @@
 <body>
     <h1>Please Enter Your Details</h1>
 	<form name="user_details" method = "post" id="user_form">
-		First Name: <input type = "text" name = "fname"/>
+		First Name: <input type = "text" name = "fname"/><span id="fname_err">Message</span>
 		<br><br>
-		Last Name: <input type = "text" name = "lname" id = "lname"/>
+		Last Name: <input type = "text" name = "lname" id = "lname"/> <span id="lname_err">Message</span>
 		<br><br>
-		Date of Birth: <input type = "date" name="dob" id = "dob"/>
+		Date of Birth: <input type = "date" name="dob" id = "dob"/> <span id="dob_err">Message</span>
 		<br><br>
-		Contact Number: <input type="text" name="phone" id = "phone"/>
+		Contact Number: <input type="text" name="phone" id = "phone"/> <span id="phone_err">Message</span>
 		<br><br>
+        Gender: 
+         <input id="m" type="radio" name="gender" value="Male" checked> Male
+         <input id="f" type="radio" name="gender" value="Female"> Female
+         <input id="o" type="radio" name="gender" value="Other"> Other
+         <br><br>
 		<input value="Submit" type = "submit"/>
 		<br><br> 
 	</form>
 	<button type="button" id="result">Show Results</button>
-    <div id="success_msg">
-    <p id="msg">Message</p>
-    </div>
+    <p id="server_msg">Message</p>
 </html>
