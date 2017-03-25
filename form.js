@@ -1,10 +1,10 @@
 $(document).ready(function()
 {   
-    $("#server_msg").css("visibility","hidden");
-    $("#fname_err").css("visibility","hidden");
-    $("#lname_err").css("visibility","hidden");
-    $("#dob_err").css("visibility","hidden");
-    $("#phone_err").css("visibility","hidden");
+    $("#server_msg").hide();
+    $("#fname_err").hide();
+    $("#lname_err").hide();
+    $("#dob_err").hide();
+    $("#phone_err").hide();
 
     $("#result").on("click", function()
     {
@@ -32,11 +32,11 @@ $(document).ready(function()
             okay = false;
             $("#fname_err").text("First name should not be empty or have numbers or special characters");
             $("#fname_err").css("color","red");
-            $("#fname_err").css("visibility","visible");
+            $("#fname_err").show()
         }
         else
         {   
-            $("#fname_err").css("visibility","hidden");
+            $("#fname_err").hide();
         }
 
         if(!lname.match(alpha))
@@ -44,11 +44,11 @@ $(document).ready(function()
             okay = false;
             $("#lname_err").text("Last name should not be empty or have numbers or special characters");
             $("#lname_err").css("color","red");
-            $("#lname_err").css("visibility","visible");
+            $("#lname_err").show()
         }
         else
         {
-            $("#lname_err").css("visibility","hidden");
+            $("#lname_err").hide();
         }
 
         if(!phone.match(num))
@@ -56,18 +56,18 @@ $(document).ready(function()
             okay = false;
             $("#phone_err").text("Phone Number should not be empty or have numbers or special characters");
             $("#phone_err").css("color","red");
-            $("#phone_err").css("visibility","visible");
+            $("#phone_err").show()
         }
         else if(phone.length != 10)
         {
             okay = false;
             $("#phone_err").text("Please enter a valid 10 digit phone number");
             $("#phone_err").css("color","red");
-            $("#phone_err").css("visibility","visible");
+            $("#phone_err").show()
         }
         else
         {
-            $("#phone_err").css("visibility","hidden");
+            $("#phone_err").hide();
         }
 
         if(dob == "")
@@ -75,11 +75,11 @@ $(document).ready(function()
             okay = false;
             $("#dob_err").text("Date of Birth should not be empty");
             $("#dob_err").css("color","red");
-            $("#dob_err").css("visibility","visible");
+            $("#dob_err").show()
         }
         else
         {
-            $("#dob_err").css("visibility","hidden");
+            $("#dob_err").hide();
         }
         
         if(okay)
@@ -94,11 +94,11 @@ $(document).ready(function()
                 var array = JSON.parse(response)
                 $("#server_msg").text(array.msg);
                 $("#server_msg").css("color",array.color);
-                $("#server_msg").css("visibility","visible");
+                $("#server_msg").show()
 
                 setTimeout(function() 
                 { 
-                 $("#server_msg").css("visibility","hidden");
+                 $("#server_msg").hide();
                  //window.location.reload(true);
                 }, 3000);
              }
