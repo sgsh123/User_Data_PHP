@@ -5,6 +5,7 @@ $(document).ready(function()
     $("#lname_err").hide();
     $("#dob_err").hide();
     $("#phone_err").hide();
+    $("#gen_err").hide();
 
     $("#result").on("click", function()
     {
@@ -20,7 +21,6 @@ $(document).ready(function()
         var dob = $('#dob').val();
         var phone = $('#phone').val();
         var gender = $('input[name="gender"]:checked').val();
-        
 
         //variables for validation
         var okay = true;
@@ -80,6 +80,18 @@ $(document).ready(function()
         else
         {
             $("#dob_err").hide();
+        }
+        
+        if(gender == undefined)
+        {
+            okay = false;
+            $("#gen_err").text("Gender should be selected");
+            $("#gen_err").css("color","red");
+            $("#gen_err").show()
+        }
+        else
+        {
+            $("#gen_err").hide();
         }
         
         if(okay)
