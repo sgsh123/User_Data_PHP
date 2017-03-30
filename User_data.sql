@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 22, 2017 at 02:43 PM
+-- Generation Time: Mar 30, 2017 at 01:44 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.24
 
@@ -32,17 +32,17 @@ CREATE TABLE `user_info` (
   `last name` varchar(50) NOT NULL,
   `date of birth` date NOT NULL,
   `contact no` varchar(15) NOT NULL,
-  `gender` text NOT NULL
+  `gender` text NOT NULL,
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_info`
 --
 
-INSERT INTO `user_info` (`id`, `first name`, `last name`, `date of birth`, `contact no`, `gender`) VALUES
-(85, 'Eq', 'E', '0011-01-01', '1234567890', 'Male'),
-(86, 'E', 'T', '0011-11-01', '1234567890', 'Female'),
-(87, 'E', 'E', '0011-10-01', '1234567890', 'Other');
+INSERT INTO `user_info` (`id`, `first name`, `last name`, `date of birth`, `contact no`, `gender`, `email`) VALUES
+(97, 'EW', 'T', '0011-10-01', '1234567890', 'Male', 'agarwalsrishti6@gmail.com'),
+(98, 'EW', 'T', '0011-10-01', '1234567890', 'Female', 'agarwalsrishti6@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +62,7 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT for table `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
