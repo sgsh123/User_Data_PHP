@@ -18,7 +18,7 @@ if($query)
      $arr = array('msg' => 'Your details have been added to the database successfully', 'color' => 'green');
      echo json_encode($arr);
      $msg = "This is a test message";
-     mail('$email', "Welcome", '$msg');
+     mail($email, "Welcome", $msg);
 }
 else
 {
