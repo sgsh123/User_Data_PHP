@@ -6,6 +6,7 @@ $(document).ready(function()
     $("#dob_err").hide();
     $("#phone_err").hide();
     $("#gen_err").hide();
+    $("#email_err").hide();
 
     $("#result").on("click", function()
     {
@@ -21,16 +22,18 @@ $(document).ready(function()
         var dob = $('#dob').val();
         var phone = $('#phone').val();
         var gender = $('input[name="gender"]:checked').val();
+        var email = $('#email').val();
 
         //variables for validation
         var okay = true;
         var alpha = /^[a-z]+$/i;
         var num = /^[0-9]+$/;
+        var sym = /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/
 
         if(!fname.match(alpha))
         {
             okay = false;
-            $("#fname_err").text("First name should not be empty or have numbers or special characters");
+            $("#fname_err").text("First name should not be or have numbers or special characters");
             $("#fname_err").css("color","red");
             $("#fname_err").show()
         }
@@ -82,6 +85,18 @@ $(document).ready(function()
             $("#dob_err").hide();
         }
         
+        if(email == "")
+        {
+            okay = false;
+            $("#email_err").text("Email ID should not be empty");
+            $("#email_err").css("color","red");
+            $("#email_err").show()
+        }
+        else
+        {   
+            $("#email_err").hide();
+        }
+
         if(gender == undefined)
         {
             okay = false;
@@ -100,7 +115,7 @@ $(document).ready(function()
             $.ajax({  
             type: 'POST',  
             url: 'form.php', 
-            data: { "fname": fname, "lname": lname, "dob": dob, "phone":phone, "gender": gender},
+            data: { "fname": fname, "lname": lname, "dob": dob, "phone":phone, "gender": gender, "email": email},
             success: function(response) 
              { 
                 var array = JSON.parse(response)
@@ -118,5 +133,3 @@ $(document).ready(function()
         }
     });
 });
-
-
