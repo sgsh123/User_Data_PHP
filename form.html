@@ -2,28 +2,53 @@
 <html>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="form.js"></script>
+<head>
+<link rel="stylesheet" type="text/css" href="form.css">
+</head>
 <body>
     <h1>Please Enter Your Details</h1>
+	<div id="main">
+	<div class="form">
 	<form name="user_details" method = "post" id="user_form">
-		First Name: <input type = "text" id = "fname"/><span id="fname_err">Message</span>
+		<label>First Name: &#160;</label>
+		<input type = "text" id = "fname"/>
 		<br><br>
-		Last Name: <input type = "text" id = "lname"/> <span id="lname_err">Message</span>
+		<label>Last Name: &#160;</label>
+		<input type = "text" id = "lname"/> 
 		<br><br>
-		Date of Birth: <input type = "date" id="dob"/> <span id="dob_err">Message</span>
+		<label>Date of Birth: &#160;</label>
+		<input type = "date" id="dob"/> 
 		<br><br>
-		Contact Number: <input type="text" id="phone"/> <span id="phone_err">Message</span>
+		<label>Contact Number: &#160;</label>
+		<input type="text" id="phone"/> 
 		<br><br>
-		Email ID: <input type="email" id="email"/> <span id="email_err">Message</span>
+		<label>Email ID: &#160;</label>
+		<input type="email" id="email"/> 
 		<br><br>
-        Gender: 
-         <input id="m" type="radio" name="gender" value="Male"> Male
-         <input id="f" type="radio" name="gender" value="Female"> Female
-         <input id="o" type="radio" name="gender" value="Other"> Other
-         <span id="gen_err">Message</span>
+        <label>Gender:</label> 
+         <input class="gen_rad" id="m" type="radio" name="gender" value="Male"> 
+         <label class="gen_lab">Male</label> 
+         <input class="gen_rad" id="f" type="radio" name="gender" value="Female">
+         <label class="gen_lab">Female</label>
+         <input class="gen_rad" id="o" type="radio" name="gender" value="Other"> 
+         <label class="gen_lab">Other</label>
          <br><br>
-		<input value="Submit" type = "submit"/>
-		<br><br> 
+		<input class="gen_rad" value="Submit" type = "submit" id="submit_btn"/>
+		<br><br>
 	</form>
+	</div>
+	</div id="errors">
+	<p id="fname_err">Message</p>
+	<p id="lname_err">Message</p>
+	<p id="dob_err">Message</p>
+	<p id="phone_err">Message</p>
+	<p id="email_err">Message</p>
+	<p id="gen_err">Message</p>
+	<div>
+	<div class="center" id="rest">
 	<button type="button" id="result">Show Currently Resigstered Users</button>
     <p id="server_msg">Message</p>
+	</div>
+	</div>
+	
 </html>

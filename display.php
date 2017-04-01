@@ -5,7 +5,7 @@ if(!$con)
  die("Connection failed: " .mysqli_connect_error());
 }
 
-	echo '<h1>User Information</h1>';
+	echo '<center><h1>User Information</h1></center>';
     echo "<center><table cellpadding='5' border='5'>
 		<tr>
 		<th>ID</th>
@@ -13,7 +13,6 @@ if(!$con)
 		<th>Last Name</th>
         <th>Date of Birth</th>
 		<th>Contact Number</th>
-        <th>Gender</th>
 		</tr></center>
 		";
 
@@ -33,7 +32,6 @@ if (mysqli_num_rows($result) > 0) {
 		<td>'.$row["last name"].'</td>
 		<td>'.$row["date of birth"].'</td>
 		<td>'.$row["contact no"].'</td>
-        <td>'.$row["gender"].'</td>
 		</tr>
 	';
     }
@@ -46,7 +44,6 @@ if (mysqli_num_rows($result) > 0) {
 		<td>'.$row["last name"].'</td>
 		<td>'.$row["date of birth"].'</td>
 		<td>'.$row["contact no"].'</td>
-        <td>'.$row["gender"].'</td>
 		</tr>
 	';
     }
